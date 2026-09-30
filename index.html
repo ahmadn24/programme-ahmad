@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Programme d'Ahmad — Viktor</title>
+<style>
+  :root{
+    --bg:#0e1116; --card:#171b22; --card2:#1e232c; --line:#2a303a;
+    --txt:#e8ebf0; --mut:#9aa4b2; --acc:#e4572e; --acc2:#f2a900; --ok:#3ecf8e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;padding-bottom:60px}
+  /* GATE */
+  #gate{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;padding:24px;text-align:center}
+  #gate h1{font-size:22px;margin-bottom:4px}
+  #gate p{color:var(--mut);font-size:14px;margin-bottom:22px}
+  #gate input{width:100%;max-width:280px;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--txt);font-size:18px;text-align:center;letter-spacing:2px}
+  #gate button{margin-top:14px;width:100%;max-width:280px;padding:14px;border:none;border-radius:12px;background:var(--acc);color:#fff;font-size:16px;font-weight:700}
+  #gerr{color:var(--acc);font-size:13px;margin-top:10px;min-height:16px}
+  #app{display:none}
+  /* HEADER */
+  header{padding:26px 18px 18px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#191d25,#0e1116)}
+  .brand{font-size:12px;letter-spacing:3px;color:var(--acc2);text-transform:uppercase;font-weight:700}
+  header h1{font-size:26px;margin-top:4px}
+  header p{color:var(--mut);font-size:14px;margin-top:6px}
+  .wrap{max-width:720px;margin:0 auto;padding:0 14px}
+  /* RULES */
+  .rules{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:18px 0}
+  .rules h3{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--acc2);margin-bottom:10px}
+  .rules ul{list-style:none}
+  .rules li{padding:6px 0 6px 24px;position:relative;font-size:14px;color:var(--txt)}
+  .rules li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;border-radius:50%;background:var(--acc)}
+  .rules b{color:#fff}
+  /* TABS */
+  .tabs{display:flex;gap:6px;margin:18px 0 6px;overflow-x:auto;padding-bottom:4px}
+  .tab{flex:0 0 auto;padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--mut);font-size:13px;font-weight:600;white-space:nowrap}
+  .tab.active{background:var(--acc);color:#fff;border-color:var(--acc)}
+  .day{display:none}
+  .day.active{display:block}
+  .day-head{margin:16px 0 4px}
+  .day-head h2{font-size:20px}
+  .day-head span{color:var(--mut);font-size:13px}
+  /* EXERCISE CARD */
+  .ex{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:14px 0}
+  .ex img{width:100%;height:190px;object-fit:cover;display:block;background:var(--card2)}
+  .ex .body{padding:14px 16px}
+  .ex .top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .ex h4{font-size:17px}
+  .ex .sets{flex:0 0 auto;background:var(--card2);border:1px solid var(--line);color:var(--acc2);font-weight:700;font-size:14px;padding:5px 10px;border-radius:10px;white-space:nowrap}
+  .ex .cue{color:var(--mut);font-size:13.5px;margin-top:8px}
+  .num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--acc);color:#fff;font-size:12px;font-weight:700;margin-right:8px;vertical-align:middle}
+  /* MORNING list (no machines) */
+  .mv{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0;display:flex;gap:12px;align-items:flex-start}
+  .mv .n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--acc2);color:#0e1116;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px}
+  .mv .t b{display:block;font-size:15px}
+  .mv .t span{color:var(--mut);font-size:13px}
+  footer{text-align:center;color:var(--mut);font-size:12px;padding:30px 16px 10px}
+  .note{background:#211a12;border:1px solid #3a2c17;color:#f2d3a6;border-radius:12px;padding:12px 14px;font-size:13.5px;margin:14px 0}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="brand">VIKTOR · COACH</div>
+  <h1 style="margin-top:8px">Programme d'Ahmad</h1>
+  <p>Accès protégé</p>
+  <input id="gpwd" type="password" inputmode="numeric" placeholder="Mot de passe" autocomplete="off">
+  <button onclick="tryPwd()">Entrer</button>
+  <div id="gerr"></div>
+</div>
+
+<div id="app">
+  <header>
+    <div class="wrap">
+      <div class="brand">VIKTOR · COACH</div>
+      <h1>Ta machine de reprise</h1>
+      <p>Full body en salle · 2 séances + 1 bonus · décrasse tous les matins</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <div class="rules">
+      <h3>Les règles qui font que ça marche</h3>
+      <ul>
+        <li><b>RPE 7-8</b> : les 2 dernières reps piquent, mais restent PROPRES. Zéro échec les premières semaines.</li>
+        <li><b>Repos 60-90s</b> entre les séries.</li>
+        <li><b>Progression</b> : 3×12 propres sur un exo → tu montes la charge la fois d'après.</li>
+        <li><b>Tu notes tes charges</b> et tu me les envoies. On sait quoi battre au prochain coup.</li>
+        <li><b>Fréquence</b> : Jour 1 + Jour 2 espacés (ex. mar / jeu), Bonus le week-end si tu as le jus.</li>
+      </ul>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" onclick="showDay('matin',this)">☀️ Décrasse matin</button>
+      <button class="tab" onclick="showDay('j1',this)">Jour 1</button>
+      <button class="tab" onclick="showDay('j2',this)">Jour 2</button>
+      <button class="tab" onclick="showDay('bonus',this)">Jour bonus</button>
+    </div>
+
+    <!-- MATIN -->
+    <section class="day active" id="matin">
+      <div class="day-head"><h2>Décrasse matinale</h2><span>Tous les matins · ~8 min · au réveil · sans matériel</span></div>
+      <div class="note">Objectif : réveiller le corps, lubrifier les articulations, lancer la machine. Léger, jamais intense. C'est le rituel qui ancre la journée.</div>
+      <div class="mv"><div class="n">1</div><div class="t"><b>Respiration réveil</b><span>5 grandes inspirations profondes, debout, épaules relâchées.</span></div></div>
+      <div class="mv"><div class="n">2</div><div class="t"><b>Cercles de cou</b><span>Rotations lentes de la tête · 30s dans chaque sens.</span></div></div>
+      <div class="mv"><div class="n">3</div><div class="t"><b>Cercles d'épaules / bras</b><span>Grands moulinets · 30s avant, 30s arrière.</span></div></div>
+      <div class="mv"><div class="n">4</div><div class="t"><b>Chat-vache (dos)</b><span>À quatre pattes, dos rond puis creux · 10 allers-retours lents.</span></div></div>
+      <div class="mv"><div class="n">5</div><div class="t"><b>Rotations du tronc</b><span>Debout, mains sur les hanches, on tourne le buste · 10 par côté.</span></div></div>
+      <div class="mv"><div class="n">6</div><div class="t"><b>Fentes marchées</b><span>5 par jambe, contrôlées, on ouvre la hanche.</span></div></div>
+      <div class="mv"><div class="n">7</div><div class="t"><b>Squats poids du corps</b><span>15 reps, amplitude complète, tempo tranquille.</span></div></div>
+      <div class="mv"><div class="n">8</div><div class="t"><b>Gainage planche</b><span>30s, corps gainé droit. Puis un grand verre d'eau.</span></div></div>
+    </section>
+
+    <!-- JOUR 1 -->
+    <section class="day" id="j1">
+      <div class="day-head"><h2>Jour 1 — Full body</h2><span>~45 min · échauffe 5 min vélo/tapis avant d'attaquer</span></div>
+
+      <div class="ex"><img src="img/presse-cuisses.jpg" alt="Presse à cuisses">
+        <div class="body"><div class="top"><h4><span class="num">1</span>Presse à cuisses</h4><div class="sets">3 × 12</div></div>
+        <div class="cue">Pieds largeur hanches, descente contrôlée, ne bloque pas les genoux en haut.</div></div></div>
+
+      <div class="ex"><img src="img/presse-pectoraux.jpg" alt="Presse à pectoraux">
+        <div class="body"><div class="top"><h4><span class="num">2</span>Presse à pectoraux (Cybex)</h4><div class="sets">3 × 12</div></div>
+        <div class="cue">Dos collé, pousse sans verrouiller les coudes, contrôle le retour.</div></div></div>
+
+      <div class="ex"><img src="img/tirage-cable.jpg" alt="Tirage / rowing câble">
+        <div class="body"><div class="top"><h4><span class="num">3</span>Tirage assis / rowing (Cybex)</h4><div class="sets">3 × 12</div></div>
+        <div class="cue">Tire avec le dos, serre les omoplates, ne tire pas qu'avec les bras.</div></div></div>
+
+      <div class="ex"><img src="img/leg-curl.jpg" alt="Leg curl">
+        <div class="body"><div class="top"><h4><span class="num">4</span>Leg curl (ischios)</h4><div class="sets">3 × 12</div></div>
+        <div class="cue">Mouvement lent, sens les ischios travailler, pas d'à-coups.</div></div></div>
+
+      <div class="ex"><img src="img/developpe-epaules.jpg" alt="Développé épaules">
+        <div class="body"><div class="top"><h4><span class="num">5</span>Développé épaules (machine)</h4><div class="sets">3 × 12</div></div>
+        <div class="cue">Pousse au-dessus de la tête, sans creuser le bas du dos.</div></div></div>
+
+      <div class="ex"><img src="img/poids-libres.jpg" alt="Gainage">
+        <div class="body"><div class="top"><h4><span class="num">6</span>Gainage planche</h4><div class="sets">3 × 40s</div></div>
+        <div class="cue">Corps droit et gainé, fesses serrées, ne creuse pas.</div></div></div>
+    </section>
+
+    <!-- JOUR 2 -->
+    <section class="day" id="j2">
+      <div class="day-head"><h2>Jour 2 — Full body (variation)</h2><span>~45 min · même logique, autres angles</span></div>
+
+      <div class="ex"><img src="img/leg-extension.jpg" alt="Leg extension">
+        <div class="body"><div class="top"><h4><span class="num">1</span>Leg extension (quadriceps)</h4><div class="sets">3 × 12</div></div>
+        <div class="cue">Extension complète, 1s de contraction en haut, descente contrôlée.</div></div></div>
+
+      <div class="ex"><img src="img/pec-deck.jpg" alt="Pec deck">
+        <div class="body"><div class="top"><h4><span class="num">2</span>Pec deck (pectoraux)</h4><div class="sets">3 × 12</div></div>
+        <div class="cue">Serre les pecs au centre, ouvre lentement sans forcer l'épaule.</div></div></div>
+
+      <div class="ex"><img src="img/tirage-cable.jpg" alt="Tirage câble">
+        <div class="body"><div class="top"><h4><span class="num">3</span>Tirage / rowing (Cybex)</h4><div class="sets">3 × 12</div></div>
+        <div class="cue">Buste droit, coudes le long du corps, omoplates serrées.</div></div></div>
+
+      <div class="ex"><img src="img/leg-curl.jpg" alt="Leg curl">
+        <div class="body"><div class="top"><h4><span class="num">4</span>Leg curl (ischios)</h4><div class="sets">3 × 12</div></div>
+        <div class="cue">Contrôle la phase de retour, c'est là que ça construit.</div></div></div>
+
+      <div class="ex"><img src="img/triceps.jpg" alt="Triceps">
+        <div class="body"><div class="top"><h4><span class="num">5</span>Triceps (machine / poulie)</h4><div class="sets">3 × 12</div></div>
+        <div class="cue">Coudes fixes, extension complète, ne balance pas le corps.</div></div></div>
+
+      <div class="ex"><img src="img/adducteurs.jpg" alt="Adducteurs">
+        <div class="body"><div class="top"><h4><span class="num">6</span>Adducteurs + Gainage</h4><div class="sets">3 × 15</div></div>
+        <div class="cue">Serre lentement, contrôle l'ouverture. Finis par 3×40s de planche.</div></div></div>
+    </section>
+
+    <!-- BONUS -->
+    <section class="day" id="bonus">
+      <div class="day-head"><h2>Jour bonus</h2><span>Optionnel · le week-end si tu as le jus · cardio + finition</span></div>
+      <div class="note">Ce jour n'est pas obligatoire. Il accélère les résultats (cœur, récup, dépense) mais si tu n'as tenu que Jour 1 + Jour 2, c'est déjà gagné.</div>
+
+      <div class="ex"><img src="img/cardio.jpg" alt="Cardio">
+        <div class="body"><div class="top"><h4><span class="num">1</span>Cardio Zone 2</h4><div class="sets">20-30 min</div></div>
+        <div class="cue">Tapis en marche inclinée ou vélo. Allure où tu peux encore parler. Ni sprint, ni promenade.</div></div></div>
+
+      <div class="ex"><img src="img/pec-deck.jpg" alt="Finition">
+        <div class="body"><div class="top"><h4><span class="num">2</span>Finition plaisir</h4><div class="sets">2-3 exos</div></div>
+        <div class="cue">Choisis 2-3 machines que tu aimes (pec deck, adducteurs, ce que tu veux) · 2×15 chacune, léger.</div></div></div>
+
+      <div class="ex"><img src="img/poids-libres.jpg" alt="Gainage">
+        <div class="body"><div class="top"><h4><span class="num">3</span>Gainage</h4><div class="sets">3 × 45s</div></div>
+        <div class="cue">Planche + planche latérale si tu veux monter d'un cran.</div></div></div>
+    </section>
+
+    <footer>
+      Programme conçu par Viktor · adapté à ta salle · adhérence &gt; optimalité.<br>
+      On fait évoluer les charges et les exos toutes les 2-3 semaines.
+    </footer>
+  </div>
+</div>
+
+<script>
+  function tryPwd(){
+    var v=document.getElementById('gpwd').value.trim();
+    if(v==="123456789"){
+      document.getElementById('gate').style.display='none';
+      document.getElementById('app').style.display='block';
+      try{sessionStorage.setItem('ok','1')}catch(e){}
+    }else{
+      document.getElementById('gerr').textContent="Mot de passe incorrect.";
+    }
+  }
+  document.getElementById('gpwd').addEventListener('keydown',function(e){if(e.key==='Enter')tryPwd()});
+  try{if(sessionStorage.getItem('ok')==='1'){document.getElementById('gate').style.display='none';document.getElementById('app').style.display='block';}}catch(e){}
+  function showDay(id,btn){
+    document.querySelectorAll('.day').forEach(function(d){d.classList.remove('active')});
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});
+    btn.classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+</script>
+</body>
+</html>
