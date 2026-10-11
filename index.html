@@ -45,17 +45,27 @@
   /* EXERCISE CARD */
   .ex{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:14px 0}
   .ex img{width:100%;height:190px;object-fit:cover;display:block;background:var(--card2)}
-  .ex .imgs{display:flex;gap:2px;background:var(--line)}
-  .ex .imgs figure{flex:1 1 50%;position:relative;margin:0;min-width:0}
-  .ex .imgs img{width:100%;height:180px;object-fit:cover;display:block;background:var(--card2)}
+  .ex .imgs{display:flex;gap:3px;background:var(--line);overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .ex .imgs::-webkit-scrollbar{height:0}
+  .ex .imgs figure{flex:0 0 66%;scroll-snap-align:start;position:relative;margin:0;min-width:0}
+  .ex .imgs img{width:100%;height:200px;object-fit:cover;display:block;background:var(--card2)}
   .ex .imgs figcaption{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);color:#fff;font-size:11px;font-weight:700;text-align:center;padding:4px 3px;letter-spacing:.5px;text-transform:uppercase}
   .ex .imgs figcaption.pos{color:var(--ok)}
+  .swipe{color:var(--mut);font-size:11px;text-align:center;padding:6px 0 0;letter-spacing:.5px}
   .ex .body{padding:14px 16px}
   .ex .top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
   .ex h4{font-size:17px}
   .ex .sets{flex:0 0 auto;background:var(--card2);border:1px solid var(--line);color:var(--acc2);font-weight:700;font-size:14px;padding:5px 10px;border-radius:10px;white-space:nowrap}
   .ex .load{display:inline-block;margin-top:10px;background:rgba(62,207,142,.12);border:1px solid #2f6b4f;color:var(--ok);font-weight:700;font-size:13px;padding:5px 11px;border-radius:9px}
   .ex .cue{color:var(--mut);font-size:13.5px;margin-top:8px}
+  .ex .guide{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+  .ex .guide .step{font-size:13.5px;color:var(--txt);line-height:1.45}
+  .ex .guide .step b{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
+  .ex .guide .lbl-set b{color:var(--acc2)}
+  .ex .guide .lbl-do b{color:var(--ok)}
+  .ex .guide .lbl-no b{color:var(--acc)}
+  .ex .guide .lbl-air b{color:var(--mut)}
+  .ex .guide .step span{color:var(--mut)}
   .num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--acc);color:#fff;font-size:12px;font-weight:700;margin-right:8px;vertical-align:middle}
   /* MORNING list (no machines) */
   .mv{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0;display:flex;gap:12px;align-items:flex-start}
@@ -125,70 +135,141 @@
     <section class="day" id="j1">
       <div class="day-head"><h2>Jour 1 — Full body</h2><span>~45 min · échauffe 5 min vélo/tapis avant d'attaquer</span></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/presse-cuisses.jpg" alt="Presse à cuisses"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-presse-cuisses.jpg" alt="Position presse à cuisses"><figcaption class="pos">Position</figcaption></figure></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/presse-cuisses.jpg" alt="Presse à cuisses"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-presse-cuisses.jpg" alt="Départ presse à cuisses"><figcaption class="pos">Départ</figcaption></figure><figure><img src="img/form2-presse-cuisses.jpg" alt="Poussée presse à cuisses"><figcaption class="pos">Poussée</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">1</span>Presse à cuisses</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~60 kg</div>
-        <div class="cue">Pieds largeur hanches, descente contrôlée, ne bloque pas les genoux en haut.</div></div></div>
+        <div class="swipe">← glisse pour voir les 3 photos →</div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Dos bien plaqué au dossier, pieds à plat sur le plateau, largeur de hanches, orteils légèrement ouverts. Siège réglé pour avoir les genoux à ~90° au départ.</div>
+          <div class="step lbl-do"><b>Exécution</b>Pousse avec les talons jusqu'à presque tendre les jambes, puis redescends lentement (2-3 sec) jusqu'à ~90° aux genoux. 12 reps.</div>
+          <div class="step lbl-no"><b>À éviter</b>Ne verrouille jamais les genoux en haut. Ne laisse pas les genoux rentrer vers l'intérieur. Ne décolle pas les fesses du siège.</div>
+          <div class="step lbl-air"><b>Respiration</b>Inspire en descendant, souffle en poussant.</div>
+        </div></div></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/presse-pectoraux.jpg" alt="Presse à pectoraux"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-presse-pectoraux.jpg" alt="Position presse à pectoraux"><figcaption class="pos">Position</figcaption></figure></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/presse-pectoraux.jpg" alt="Presse à pectoraux"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-presse-pectoraux.jpg" alt="Départ presse à pectoraux"><figcaption class="pos">Départ</figcaption></figure><figure><img src="img/form2-presse-pectoraux.jpg" alt="Poussée presse à pectoraux"><figcaption class="pos">Poussée</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">2</span>Presse à pectoraux (Cybex)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~25 kg</div>
-        <div class="cue">Dos collé, pousse sans verrouiller les coudes, contrôle le retour.</div></div></div>
+        <div class="swipe">← glisse pour voir les 3 photos →</div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Dos et tête contre le dossier. Règle la hauteur du siège pour que les poignées soient au niveau du milieu de ta poitrine. Pieds à plat au sol.</div>
+          <div class="step lbl-do"><b>Exécution</b>Pousse les poignées devant toi jusqu'à presque tendre les bras, puis reviens lentement jusqu'à ce que les coudes dépassent légèrement le buste.</div>
+          <div class="step lbl-no"><b>À éviter</b>Ne verrouille pas les coudes en fin de poussée. Ne décolle pas les épaules du dossier. Ne laisse pas la charge claquer au retour.</div>
+          <div class="step lbl-air"><b>Respiration</b>Souffle en poussant, inspire au retour.</div>
+        </div></div></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/tirage-cable.jpg" alt="Tirage / rowing câble"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-tirage-cable.jpg" alt="Position tirage"><figcaption class="pos">Position</figcaption></figure></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/tirage-cable.jpg" alt="Tirage / rowing câble"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-tirage-cable.jpg" alt="Départ tirage"><figcaption class="pos">Départ</figcaption></figure><figure><img src="img/form2-tirage-cable.jpg" alt="Tirage serré"><figcaption class="pos">Tirage</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">3</span>Tirage assis / rowing (Cybex)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~35 kg</div>
-        <div class="cue">Tire avec le dos, serre les omoplates, ne tire pas qu'avec les bras.</div></div></div>
+        <div class="swipe">← glisse pour voir les 3 photos →</div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Buste droit, pieds calés sur les cales, saisis la poignée bras tendus avec un léger étirement du dos au départ.</div>
+          <div class="step lbl-do"><b>Exécution</b>Tire la poignée vers le bas-ventre en serrant les omoplates, coudes qui longent le corps. Reviens bras tendus en contrôlant.</div>
+          <div class="step lbl-no"><b>À éviter</b>Ne tire pas qu'avec les bras (c'est le dos qui travaille). Ne balance pas le buste d'avant en arrière. Ne hausse pas les épaules.</div>
+          <div class="step lbl-air"><b>Respiration</b>Souffle en tirant, inspire en relâchant.</div>
+        </div></div></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/leg-curl.jpg" alt="Leg curl"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-leg-curl.jpg" alt="Position leg curl"><figcaption class="pos">Position</figcaption></figure></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/leg-curl.jpg" alt="Leg curl"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-leg-curl.jpg" alt="Départ leg curl"><figcaption class="pos">Départ</figcaption></figure><figure><img src="img/form2-leg-curl.jpg" alt="Flexion leg curl"><figcaption class="pos">Flexion</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">4</span>Leg curl (ischios)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~25 kg</div>
-        <div class="cue">Mouvement lent, sens les ischios travailler, pas d'à-coups.</div></div></div>
+        <div class="swipe">← glisse pour voir les 3 photos →</div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Coussinet posé juste au-dessus des talons (sur le tendon d'Achille), genoux alignés avec l'axe de rotation de la machine.</div>
+          <div class="step lbl-do"><b>Exécution</b>Fléchis les genoux en amenant les talons vers les fesses, serre les ischios en fin de course, puis reviens lentement.</div>
+          <div class="step lbl-no"><b>À éviter</b>Pas d'à-coups ni d'élan. Ne décolle pas le bassin du coussin. Ne laisse pas la charge retomber seule (contrôle le retour).</div>
+          <div class="step lbl-air"><b>Respiration</b>Souffle en pliant, inspire en revenant.</div>
+        </div></div></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/developpe-epaules.jpg" alt="Développé épaules"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-developpe-epaules.jpg" alt="Position développé épaules"><figcaption class="pos">Position</figcaption></figure></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/developpe-epaules.jpg" alt="Développé épaules"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-developpe-epaules.jpg" alt="Départ développé épaules"><figcaption class="pos">Départ</figcaption></figure><figure><img src="img/form2-developpe-epaules.jpg" alt="Poussée développé épaules"><figcaption class="pos">Poussée</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">5</span>Développé épaules (machine)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~20 kg</div>
-        <div class="cue">Pousse au-dessus de la tête, sans creuser le bas du dos. Épaule sensible → reste léger, pas de douleur.</div></div></div>
+        <div class="swipe">← glisse pour voir les 3 photos →</div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Dos plaqué, poignées à hauteur des épaules au départ. Épaule sensible → commence très léger et teste l'amplitude sans douleur avant de charger.</div>
+          <div class="step lbl-do"><b>Exécution</b>Pousse au-dessus de la tête sans tendre complètement les coudes, puis redescends jusqu'à hauteur des oreilles.</div>
+          <div class="step lbl-no"><b>À éviter</b>Ne creuse pas le bas du dos. Ne verrouille pas les coudes. STOP immédiat si DOULEUR d'épaule (une simple tension musculaire, c'est normal ; une douleur articulaire, non).</div>
+          <div class="step lbl-air"><b>Respiration</b>Souffle en poussant, inspire en descendant.</div>
+        </div></div></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/poids-libres.jpg" alt="Gainage"><figcaption>Ta salle</figcaption></figure><figure><img src="img/form-gainage.jpg" alt="Position gainage"><figcaption class="pos">Position</figcaption></figure></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/poids-libres.jpg" alt="Ta salle"><figcaption>Ta salle</figcaption></figure><figure><img src="img/form-gainage.jpg" alt="Position gainage"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">6</span>Gainage planche</h4><div class="sets">3 × 40s</div></div>
         <div class="load">⚡ Poids du corps</div>
-        <div class="cue">Corps droit et gainé, fesses serrées, ne creuse pas.</div></div></div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Position</b>Appuis sur les avant-bras et les pointes de pieds. Coudes à la verticale sous les épaules.</div>
+          <div class="step lbl-do"><b>Exécution</b>Corps parfaitement droit de la tête aux talons, abdos et fessiers serrés. Tiens 40 secondes, 3 fois.</div>
+          <div class="step lbl-no"><b>À éviter</b>Ne creuse pas le dos (bassin qui s'affaisse). Ne lève pas les fesses en pont. Ne bloque pas ta respiration.</div>
+          <div class="step lbl-air"><b>Respiration</b>Respire calmement et en continu pendant tout le maintien.</div>
+        </div></div></div>
     </section>
 
     <!-- JOUR 2 -->
     <section class="day" id="j2">
       <div class="day-head"><h2>Jour 2 — Full body (variation)</h2><span>~45 min · même logique, autres angles</span></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/leg-extension.jpg" alt="Leg extension"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-leg-extension.jpg" alt="Position leg extension"><figcaption class="pos">Position</figcaption></figure></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/leg-extension.jpg" alt="Leg extension"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-leg-extension.jpg" alt="Départ leg extension"><figcaption class="pos">Départ</figcaption></figure><figure><img src="img/form2-leg-extension.jpg" alt="Extension leg extension"><figcaption class="pos">Extension</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">1</span>Leg extension (quadriceps)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~30 kg</div>
-        <div class="cue">Extension complète, 1s de contraction en haut, descente contrôlée.</div></div></div>
+        <div class="swipe">← glisse pour voir les 3 photos →</div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Dos calé contre le dossier, le coussinet repose sur le bas du tibia (juste au-dessus du cou-de-pied). L'axe de rotation doit être aligné avec tes genoux.</div>
+          <div class="step lbl-do"><b>Exécution</b>Tends les jambes jusqu'à l'extension complète, tiens 1 seconde en haut en contractant les quadriceps, puis redescends lentement.</div>
+          <div class="step lbl-no"><b>À éviter</b>Ne claque pas la charge au retour. Ne décolle pas les fesses du siège. Pas d'à-coups pour lancer le mouvement.</div>
+          <div class="step lbl-air"><b>Respiration</b>Souffle en tendant, inspire en descendant.</div>
+        </div></div></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/pec-deck.jpg" alt="Pec deck"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-pec-deck.jpg" alt="Position pec deck"><figcaption class="pos">Position</figcaption></figure></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/pec-deck.jpg" alt="Pec deck"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-pec-deck.jpg" alt="Départ pec deck"><figcaption class="pos">Départ</figcaption></figure><figure><img src="img/form2-pec-deck.jpg" alt="Serrage pec deck"><figcaption class="pos">Serrage</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">2</span>Pec deck (pectoraux)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~25 kg</div>
-        <div class="cue">Serre les pecs au centre, ouvre lentement sans forcer l'épaule.</div></div></div>
+        <div class="swipe">← glisse pour voir les 3 photos →</div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Dos plaqué au dossier, avant-bras contre les coussinets, coudes à hauteur des épaules (pas plus haut). Règle le siège pour que ce soit le cas.</div>
+          <div class="step lbl-do"><b>Exécution</b>Ramène les coussinets devant toi en serrant les pectoraux au centre, tiens 1 seconde, puis ouvre lentement jusqu'à sentir l'étirement.</div>
+          <div class="step lbl-no"><b>À éviter</b>N'ouvre pas trop grand (ça force l'épaule). Ne décolle pas le dos. Ne pousse pas avec les mains, c'est les coudes/avant-bras qui mènent.</div>
+          <div class="step lbl-air"><b>Respiration</b>Souffle en fermant, inspire en ouvrant.</div>
+        </div></div></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/tirage-cable.jpg" alt="Tirage câble"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-tirage-cable.jpg" alt="Position tirage"><figcaption class="pos">Position</figcaption></figure></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/tirage-cable.jpg" alt="Tirage câble"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-tirage-cable.jpg" alt="Départ tirage"><figcaption class="pos">Départ</figcaption></figure><figure><img src="img/form2-tirage-cable.jpg" alt="Tirage serré"><figcaption class="pos">Tirage</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">3</span>Tirage / rowing (Cybex)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~35 kg</div>
-        <div class="cue">Buste droit, coudes le long du corps, omoplates serrées.</div></div></div>
+        <div class="swipe">← glisse pour voir les 3 photos →</div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Buste droit, pieds calés, saisis la poignée bras tendus avec un léger étirement du dos au départ.</div>
+          <div class="step lbl-do"><b>Exécution</b>Tire vers le bas-ventre en serrant les omoplates, coudes le long du corps. Reviens bras tendus en contrôlant.</div>
+          <div class="step lbl-no"><b>À éviter</b>Ne tire pas qu'avec les bras. Ne balance pas le buste. Ne hausse pas les épaules vers les oreilles.</div>
+          <div class="step lbl-air"><b>Respiration</b>Souffle en tirant, inspire en relâchant.</div>
+        </div></div></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/leg-curl.jpg" alt="Leg curl"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-leg-curl.jpg" alt="Position leg curl"><figcaption class="pos">Position</figcaption></figure></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/leg-curl.jpg" alt="Leg curl"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-leg-curl.jpg" alt="Départ leg curl"><figcaption class="pos">Départ</figcaption></figure><figure><img src="img/form2-leg-curl.jpg" alt="Flexion leg curl"><figcaption class="pos">Flexion</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">4</span>Leg curl (ischios)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~25 kg</div>
-        <div class="cue">Contrôle la phase de retour, c'est là que ça construit.</div></div></div>
+        <div class="swipe">← glisse pour voir les 3 photos →</div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Coussinet juste au-dessus des talons, genoux alignés avec l'axe de la machine.</div>
+          <div class="step lbl-do"><b>Exécution</b>Fléchis en amenant les talons vers les fesses, serre les ischios en fin de course, puis reviens lentement. Contrôle le retour, c'est là que ça construit.</div>
+          <div class="step lbl-no"><b>À éviter</b>Pas d'à-coups. Ne décolle pas le bassin du coussin. Ne laisse pas la charge retomber seule.</div>
+          <div class="step lbl-air"><b>Respiration</b>Souffle en pliant, inspire en revenant.</div>
+        </div></div></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/triceps.jpg" alt="Triceps"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-triceps.jpg" alt="Position triceps"><figcaption class="pos">Position</figcaption></figure></div>
-        <div class="body"><div class="top"><h4><span class="num">5</span>Triceps (machine / poulie)</h4><div class="sets">3 × 12</div></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/triceps.jpg" alt="Triceps"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-triceps.jpg" alt="Départ triceps"><figcaption class="pos">Départ</figcaption></figure><figure><img src="img/form2-triceps.jpg" alt="Extension triceps"><figcaption class="pos">Extension</figcaption></figure></div>
+        <div class="body"><div class="top"><h4><span class="num">5</span>Triceps (poulie haute)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~20 kg</div>
-        <div class="cue">Coudes fixes, extension complète, ne balance pas le corps.</div></div></div>
+        <div class="swipe">← glisse pour voir les 3 photos →</div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Debout face à la poulie haute, saisis la barre/corde, coudes collés au corps, buste légèrement penché en avant.</div>
+          <div class="step lbl-do"><b>Exécution</b>Tends les bras vers le bas jusqu'à l'extension complète en gardant les coudes fixes, puis remonte lentement jusqu'à l'angle droit.</div>
+          <div class="step lbl-no"><b>À éviter</b>Ne décolle pas les coudes du corps. Ne balance pas le buste pour tricher. Ne remonte pas trop haut (garde la tension).</div>
+          <div class="step lbl-air"><b>Respiration</b>Souffle en tendant, inspire en remontant.</div>
+        </div></div></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/adducteurs.jpg" alt="Adducteurs"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-adducteurs.jpg" alt="Position adducteurs"><figcaption class="pos">Position</figcaption></figure></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/adducteurs.jpg" alt="Adducteurs"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-adducteurs.jpg" alt="Départ adducteurs"><figcaption class="pos">Départ</figcaption></figure><figure><img src="img/form2-adducteurs.jpg" alt="Serrage adducteurs"><figcaption class="pos">Serrage</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">6</span>Adducteurs + Gainage</h4><div class="sets">3 × 15</div></div>
         <div class="load">⚡ Départ ~35 kg</div>
-        <div class="cue">Serre lentement, contrôle l'ouverture. Finis par 3×40s de planche.</div></div></div>
+        <div class="swipe">← glisse pour voir les 3 photos →</div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Assis bien calé au fond du siège, jambes écartées contre les coussinets intérieurs des cuisses.</div>
+          <div class="step lbl-do"><b>Exécution</b>Serre les cuisses pour rapprocher les coussinets, tiens 1 seconde au centre, puis ouvre lentement en contrôlant. Finis la séance par 3×40s de planche.</div>
+          <div class="step lbl-no"><b>À éviter</b>Ne claque pas les coussinets. N'ouvre pas au-delà de ton amplitude confortable. Ne te sers pas des mains pour pousser.</div>
+          <div class="step lbl-air"><b>Respiration</b>Souffle en serrant, inspire en ouvrant.</div>
+        </div></div></div>
     </section>
 
     <!-- BONUS -->
@@ -199,32 +280,66 @@
       <div class="ex"><div class="imgs"><figure><img src="img/cardio.jpg" alt="Cardio"><figcaption>Ta salle</figcaption></figure><figure><img src="img/form-cardio.jpg" alt="Position vélo"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">1</span>Cardio Zone 2</h4><div class="sets">20-30 min</div></div>
         <div class="load">⚡ Allure conversation</div>
-        <div class="cue">Tapis en marche inclinée ou vélo. Allure où tu peux encore tenir une phrase complète sans t'essouffler. Ni sprint, ni promenade. C'est le socle longévité (cœur).</div></div></div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Vélo (selle à hauteur de hanche) ou tapis en marche inclinée. Résistance modérée.</div>
+          <div class="step lbl-do"><b>Exécution</b>Garde une allure où tu peux encore tenir une phrase complète sans t'essouffler. Ni sprint, ni promenade. C'est le socle longévité (cœur).</div>
+          <div class="step lbl-no"><b>À éviter</b>Ne monte pas dans le rouge (si tu ne peux plus parler, ralentis). Ne reste pas avachi sur le guidon.</div>
+          <div class="step lbl-air"><b>Respiration</b>Respiration régulière par le nez tant que possible. Si tu dois respirer par la bouche en forçant, c'est trop rapide.</div>
+        </div></div></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/presse-cuisses.jpg" alt="Presse à cuisses"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-presse-cuisses.jpg" alt="Position presse à cuisses"><figcaption class="pos">Position</figcaption></figure></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/presse-cuisses.jpg" alt="Presse à cuisses"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-presse-cuisses.jpg" alt="Départ presse à cuisses"><figcaption class="pos">Départ</figcaption></figure><figure><img src="img/form2-presse-cuisses.jpg" alt="Poussée presse à cuisses"><figcaption class="pos">Poussée</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">2</span>Presse à cuisses (léger)</h4><div class="sets">2 × 15</div></div>
         <div class="load">⚡ Départ ~40 kg</div>
-        <div class="cue">Plus léger que J1, plus de reps. On cherche le flux sanguin, pas la charge.</div></div></div>
+        <div class="swipe">← glisse pour voir les 3 photos →</div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Dos et bassin bien calés, pieds écartés largeur d'épaules au milieu du plateau.</div>
+          <div class="step lbl-do"><b>Exécution</b>Plus léger que J1, plus de reps. Descends en pliant à ~90°, pousse sans verrouiller. On cherche le flux sanguin, pas la charge.</div>
+          <div class="step lbl-no"><b>À éviter</b>Ne décolle pas le bas du dos du siège. Ne verrouille pas les genoux en fin de poussée.</div>
+          <div class="step lbl-air"><b>Respiration</b>Souffle en poussant, inspire en descendant.</div>
+        </div></div></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/pec-deck.jpg" alt="Pec deck"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-pec-deck.jpg" alt="Position pec deck"><figcaption class="pos">Position</figcaption></figure></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/pec-deck.jpg" alt="Pec deck"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-pec-deck.jpg" alt="Départ pec deck"><figcaption class="pos">Départ</figcaption></figure><figure><img src="img/form2-pec-deck.jpg" alt="Serrage pec deck"><figcaption class="pos">Serrage</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">3</span>Pec deck (léger)</h4><div class="sets">2 × 15</div></div>
         <div class="load">⚡ Départ ~20 kg</div>
-        <div class="cue">Serre les pecs au centre, amplitude complète, aucune douleur d'épaule.</div></div></div>
+        <div class="swipe">← glisse pour voir les 3 photos →</div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Dos plaqué, avant-bras contre les coussinets, coudes à hauteur des épaules.</div>
+          <div class="step lbl-do"><b>Exécution</b>Serre les pecs au centre, amplitude complète et contrôlée. Léger, aucune douleur d'épaule.</div>
+          <div class="step lbl-no"><b>À éviter</b>N'ouvre pas trop grand. Ne force jamais l'épaule sensible.</div>
+          <div class="step lbl-air"><b>Respiration</b>Souffle en fermant, inspire en ouvrant.</div>
+        </div></div></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/tirage-cable.jpg" alt="Tirage"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-tirage-cable.jpg" alt="Position tirage"><figcaption class="pos">Position</figcaption></figure></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/tirage-cable.jpg" alt="Tirage"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-tirage-cable.jpg" alt="Départ tirage"><figcaption class="pos">Départ</figcaption></figure><figure><img src="img/form2-tirage-cable.jpg" alt="Tirage serré"><figcaption class="pos">Tirage</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">4</span>Tirage / rowing (léger)</h4><div class="sets">2 × 15</div></div>
         <div class="load">⚡ Départ ~30 kg</div>
-        <div class="cue">Équilibre le pec deck, garde le buste droit, omoplates serrées.</div></div></div>
+        <div class="swipe">← glisse pour voir les 3 photos →</div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Buste droit, pieds calés, poignée saisie bras tendus au départ.</div>
+          <div class="step lbl-do"><b>Exécution</b>Tire vers le bas-ventre, omoplates serrées, coudes le long du corps. Équilibre le pec deck (muscles du dos).</div>
+          <div class="step lbl-no"><b>À éviter</b>Ne balance pas le buste. Ne hausse pas les épaules.</div>
+          <div class="step lbl-air"><b>Respiration</b>Souffle en tirant, inspire en relâchant.</div>
+        </div></div></div>
 
-      <div class="ex"><div class="imgs"><figure><img src="img/poids-libres.jpg" alt="Haltères"><figcaption>Ta salle</figcaption></figure><figure><img src="img/form-biceps.jpg" alt="Position biceps curl"><figcaption class="pos">Position</figcaption></figure></div>
+      <div class="ex"><div class="imgs"><figure><img src="img/poids-libres.jpg" alt="Haltères"><figcaption>Ta salle</figcaption></figure><figure><img src="img/form-biceps.jpg" alt="Départ biceps curl"><figcaption class="pos">Départ</figcaption></figure><figure><img src="img/form2-biceps.jpg" alt="Flexion biceps curl"><figcaption class="pos">Flexion</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">5</span>Biceps curl (haltères)</h4><div class="sets">2 × 12</div></div>
         <div class="load">⚡ Départ ~8 kg / main</div>
-        <div class="cue">Les bras qu'on ne cible pas en J1/J2. Coudes fixes, pas de balancier. Pur plaisir.</div></div></div>
+        <div class="swipe">← glisse pour voir les 3 photos →</div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Réglage</b>Debout, un haltère dans chaque main, bras le long du corps, coudes collés aux côtes.</div>
+          <div class="step lbl-do"><b>Exécution</b>Monte les haltères vers les épaules en gardant les coudes fixes, serre le biceps en haut, descends lentement. Les bras que J1/J2 ne ciblent pas. Pur plaisir.</div>
+          <div class="step lbl-no"><b>À éviter</b>Pas de balancier du corps. Ne décolle pas les coudes vers l'avant. Ne lâche pas la descente.</div>
+          <div class="step lbl-air"><b>Respiration</b>Souffle en montant, inspire en descendant.</div>
+        </div></div></div>
 
       <div class="ex"><div class="imgs"><figure><img src="img/poids-libres.jpg" alt="Gainage"><figcaption>Ta salle</figcaption></figure><figure><img src="img/form-gainage.jpg" alt="Position gainage"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">6</span>Gainage</h4><div class="sets">3 × 45s</div></div>
         <div class="load">⚡ Poids du corps</div>
-        <div class="cue">Planche + planche latérale si tu veux monter d'un cran.</div></div></div>
+        <div class="guide">
+          <div class="step lbl-set"><b>Position</b>Appuis sur les avant-bras et les pointes de pieds, coudes sous les épaules.</div>
+          <div class="step lbl-do"><b>Exécution</b>Corps droit de la tête aux talons, abdos et fessiers serrés. Tiens 45 secondes, 3 fois. Ajoute la planche latérale si tu veux monter d'un cran.</div>
+          <div class="step lbl-no"><b>À éviter</b>Ne creuse pas le dos. Ne lève pas les fesses. Ne bloque pas ta respiration.</div>
+          <div class="step lbl-air"><b>Respiration</b>Respire calmement et en continu pendant tout le maintien.</div>
+        </div></div></div>
     </section>
 
     <footer>
