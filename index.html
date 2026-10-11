@@ -49,6 +49,7 @@
   .ex .top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
   .ex h4{font-size:17px}
   .ex .sets{flex:0 0 auto;background:var(--card2);border:1px solid var(--line);color:var(--acc2);font-weight:700;font-size:14px;padding:5px 10px;border-radius:10px;white-space:nowrap}
+  .ex .load{display:inline-block;margin-top:10px;background:rgba(62,207,142,.12);border:1px solid #2f6b4f;color:var(--ok);font-weight:700;font-size:13px;padding:5px 11px;border-radius:9px}
   .ex .cue{color:var(--mut);font-size:13.5px;margin-top:8px}
   .num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--acc);color:#fff;font-size:12px;font-weight:700;margin-right:8px;vertical-align:middle}
   /* MORNING list (no machines) */
@@ -90,6 +91,7 @@
         <li><b>Progression</b> : 3×12 propres sur un exo → tu montes la charge la fois d'après.</li>
         <li><b>Tu notes tes charges</b> et tu me les envoies. On sait quoi battre au prochain coup.</li>
         <li><b>Fréquence</b> : Jour 1 + Jour 2 espacés (ex. mar / jeu), Bonus le week-end si tu as le jus.</li>
+        <li><b>La charge verte = point de départ estimé</b> (calibré sur ton profil : 94 kg, reprise). Chaque machine a son propre poids de stack, donc le vrai juge c'est le ressenti : 12 reps trop faciles (RPE &lt; 7) → +1 cran. Tu ne finis pas 12 propres → −1 cran. <b>La 1re séance, tu trouves TES chiffres</b> — c'est ça la baseline.</li>
       </ul>
     </div>
 
@@ -120,26 +122,32 @@
 
       <div class="ex"><img src="img/presse-cuisses.jpg" alt="Presse à cuisses">
         <div class="body"><div class="top"><h4><span class="num">1</span>Presse à cuisses</h4><div class="sets">3 × 12</div></div>
+        <div class="load">⚡ Départ ~60 kg</div>
         <div class="cue">Pieds largeur hanches, descente contrôlée, ne bloque pas les genoux en haut.</div></div></div>
 
       <div class="ex"><img src="img/presse-pectoraux.jpg" alt="Presse à pectoraux">
         <div class="body"><div class="top"><h4><span class="num">2</span>Presse à pectoraux (Cybex)</h4><div class="sets">3 × 12</div></div>
+        <div class="load">⚡ Départ ~25 kg</div>
         <div class="cue">Dos collé, pousse sans verrouiller les coudes, contrôle le retour.</div></div></div>
 
       <div class="ex"><img src="img/tirage-cable.jpg" alt="Tirage / rowing câble">
         <div class="body"><div class="top"><h4><span class="num">3</span>Tirage assis / rowing (Cybex)</h4><div class="sets">3 × 12</div></div>
+        <div class="load">⚡ Départ ~35 kg</div>
         <div class="cue">Tire avec le dos, serre les omoplates, ne tire pas qu'avec les bras.</div></div></div>
 
       <div class="ex"><img src="img/leg-curl.jpg" alt="Leg curl">
         <div class="body"><div class="top"><h4><span class="num">4</span>Leg curl (ischios)</h4><div class="sets">3 × 12</div></div>
+        <div class="load">⚡ Départ ~25 kg</div>
         <div class="cue">Mouvement lent, sens les ischios travailler, pas d'à-coups.</div></div></div>
 
       <div class="ex"><img src="img/developpe-epaules.jpg" alt="Développé épaules">
         <div class="body"><div class="top"><h4><span class="num">5</span>Développé épaules (machine)</h4><div class="sets">3 × 12</div></div>
-        <div class="cue">Pousse au-dessus de la tête, sans creuser le bas du dos.</div></div></div>
+        <div class="load">⚡ Départ ~20 kg</div>
+        <div class="cue">Pousse au-dessus de la tête, sans creuser le bas du dos. Épaule sensible → reste léger, pas de douleur.</div></div></div>
 
       <div class="ex"><img src="img/poids-libres.jpg" alt="Gainage">
         <div class="body"><div class="top"><h4><span class="num">6</span>Gainage planche</h4><div class="sets">3 × 40s</div></div>
+        <div class="load">⚡ Poids du corps</div>
         <div class="cue">Corps droit et gainé, fesses serrées, ne creuse pas.</div></div></div>
     </section>
 
@@ -149,44 +157,68 @@
 
       <div class="ex"><img src="img/leg-extension.jpg" alt="Leg extension">
         <div class="body"><div class="top"><h4><span class="num">1</span>Leg extension (quadriceps)</h4><div class="sets">3 × 12</div></div>
+        <div class="load">⚡ Départ ~30 kg</div>
         <div class="cue">Extension complète, 1s de contraction en haut, descente contrôlée.</div></div></div>
 
       <div class="ex"><img src="img/pec-deck.jpg" alt="Pec deck">
         <div class="body"><div class="top"><h4><span class="num">2</span>Pec deck (pectoraux)</h4><div class="sets">3 × 12</div></div>
+        <div class="load">⚡ Départ ~25 kg</div>
         <div class="cue">Serre les pecs au centre, ouvre lentement sans forcer l'épaule.</div></div></div>
 
       <div class="ex"><img src="img/tirage-cable.jpg" alt="Tirage câble">
         <div class="body"><div class="top"><h4><span class="num">3</span>Tirage / rowing (Cybex)</h4><div class="sets">3 × 12</div></div>
+        <div class="load">⚡ Départ ~35 kg</div>
         <div class="cue">Buste droit, coudes le long du corps, omoplates serrées.</div></div></div>
 
       <div class="ex"><img src="img/leg-curl.jpg" alt="Leg curl">
         <div class="body"><div class="top"><h4><span class="num">4</span>Leg curl (ischios)</h4><div class="sets">3 × 12</div></div>
+        <div class="load">⚡ Départ ~25 kg</div>
         <div class="cue">Contrôle la phase de retour, c'est là que ça construit.</div></div></div>
 
       <div class="ex"><img src="img/triceps.jpg" alt="Triceps">
         <div class="body"><div class="top"><h4><span class="num">5</span>Triceps (machine / poulie)</h4><div class="sets">3 × 12</div></div>
+        <div class="load">⚡ Départ ~20 kg</div>
         <div class="cue">Coudes fixes, extension complète, ne balance pas le corps.</div></div></div>
 
       <div class="ex"><img src="img/adducteurs.jpg" alt="Adducteurs">
         <div class="body"><div class="top"><h4><span class="num">6</span>Adducteurs + Gainage</h4><div class="sets">3 × 15</div></div>
+        <div class="load">⚡ Départ ~35 kg</div>
         <div class="cue">Serre lentement, contrôle l'ouverture. Finis par 3×40s de planche.</div></div></div>
     </section>
 
     <!-- BONUS -->
     <section class="day" id="bonus">
-      <div class="day-head"><h2>Jour bonus</h2><span>Optionnel · le week-end si tu as le jus · cardio + finition</span></div>
-      <div class="note">Ce jour n'est pas obligatoire. Il accélère les résultats (cœur, récup, dépense) mais si tu n'as tenu que Jour 1 + Jour 2, c'est déjà gagné.</div>
+      <div class="day-head"><h2>Jour bonus — Cardio + pump léger</h2><span>Optionnel · le week-end si tu as le jus · ~40 min · tout en légèreté</span></div>
+      <div class="note">Pas obligatoire. Il accélère les résultats (cœur, récup, dépense) et travaille le VO2/l'endurance que J1 et J2 ne touchent pas. Si tu n'as tenu que Jour 1 + Jour 2, c'est déjà gagné. Ici tout est LÉGER : RPE 6, on cherche la circulation et le plaisir, pas la perf.</div>
 
-      <div class="ex"><img src="img/cardio.jpg" alt="Cardio">
+      <div class="ex"><img src="img/cardio.jpg" alt="Cardio Zone 2">
         <div class="body"><div class="top"><h4><span class="num">1</span>Cardio Zone 2</h4><div class="sets">20-30 min</div></div>
-        <div class="cue">Tapis en marche inclinée ou vélo. Allure où tu peux encore parler. Ni sprint, ni promenade.</div></div></div>
+        <div class="load">⚡ Allure conversation</div>
+        <div class="cue">Tapis en marche inclinée ou vélo. Allure où tu peux encore tenir une phrase complète sans t'essouffler. Ni sprint, ni promenade. C'est le socle longévité (cœur).</div></div></div>
 
-      <div class="ex"><img src="img/pec-deck.jpg" alt="Finition">
-        <div class="body"><div class="top"><h4><span class="num">2</span>Finition plaisir</h4><div class="sets">2-3 exos</div></div>
-        <div class="cue">Choisis 2-3 machines que tu aimes (pec deck, adducteurs, ce que tu veux) · 2×15 chacune, léger.</div></div></div>
+      <div class="ex"><img src="img/presse-cuisses.jpg" alt="Presse à cuisses légère">
+        <div class="body"><div class="top"><h4><span class="num">2</span>Presse à cuisses (léger)</h4><div class="sets">2 × 15</div></div>
+        <div class="load">⚡ Départ ~40 kg</div>
+        <div class="cue">Plus léger que J1, plus de reps. On cherche le flux sanguin, pas la charge.</div></div></div>
+
+      <div class="ex"><img src="img/pec-deck.jpg" alt="Pec deck léger">
+        <div class="body"><div class="top"><h4><span class="num">3</span>Pec deck (léger)</h4><div class="sets">2 × 15</div></div>
+        <div class="load">⚡ Départ ~20 kg</div>
+        <div class="cue">Serre les pecs au centre, amplitude complète, aucune douleur d'épaule.</div></div></div>
+
+      <div class="ex"><img src="img/tirage-cable.jpg" alt="Tirage léger">
+        <div class="body"><div class="top"><h4><span class="num">4</span>Tirage / rowing (léger)</h4><div class="sets">2 × 15</div></div>
+        <div class="load">⚡ Départ ~30 kg</div>
+        <div class="cue">Équilibre le pec deck, garde le buste droit, omoplates serrées.</div></div></div>
+
+      <div class="ex"><img src="img/poids-libres.jpg" alt="Biceps curl haltères">
+        <div class="body"><div class="top"><h4><span class="num">5</span>Biceps curl (haltères)</h4><div class="sets">2 × 12</div></div>
+        <div class="load">⚡ Départ ~8 kg / main</div>
+        <div class="cue">Les bras qu'on ne cible pas en J1/J2. Coudes fixes, pas de balancier. Pur plaisir.</div></div></div>
 
       <div class="ex"><img src="img/poids-libres.jpg" alt="Gainage">
-        <div class="body"><div class="top"><h4><span class="num">3</span>Gainage</h4><div class="sets">3 × 45s</div></div>
+        <div class="body"><div class="top"><h4><span class="num">6</span>Gainage</h4><div class="sets">3 × 45s</div></div>
+        <div class="load">⚡ Poids du corps</div>
         <div class="cue">Planche + planche latérale si tu veux monter d'un cran.</div></div></div>
     </section>
 
