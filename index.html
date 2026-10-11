@@ -45,6 +45,11 @@
   /* EXERCISE CARD */
   .ex{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:14px 0}
   .ex img{width:100%;height:190px;object-fit:cover;display:block;background:var(--card2)}
+  .ex .imgs{display:flex;gap:2px;background:var(--line)}
+  .ex .imgs figure{flex:1 1 50%;position:relative;margin:0;min-width:0}
+  .ex .imgs img{width:100%;height:180px;object-fit:cover;display:block;background:var(--card2)}
+  .ex .imgs figcaption{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.6);color:#fff;font-size:11px;font-weight:700;text-align:center;padding:4px 3px;letter-spacing:.5px;text-transform:uppercase}
+  .ex .imgs figcaption.pos{color:var(--ok)}
   .ex .body{padding:14px 16px}
   .ex .top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
   .ex h4{font-size:17px}
@@ -120,32 +125,32 @@
     <section class="day" id="j1">
       <div class="day-head"><h2>Jour 1 — Full body</h2><span>~45 min · échauffe 5 min vélo/tapis avant d'attaquer</span></div>
 
-      <div class="ex"><img src="img/presse-cuisses.jpg" alt="Presse à cuisses">
+      <div class="ex"><div class="imgs"><figure><img src="img/presse-cuisses.jpg" alt="Presse à cuisses"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-presse-cuisses.jpg" alt="Position presse à cuisses"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">1</span>Presse à cuisses</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~60 kg</div>
         <div class="cue">Pieds largeur hanches, descente contrôlée, ne bloque pas les genoux en haut.</div></div></div>
 
-      <div class="ex"><img src="img/presse-pectoraux.jpg" alt="Presse à pectoraux">
+      <div class="ex"><div class="imgs"><figure><img src="img/presse-pectoraux.jpg" alt="Presse à pectoraux"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-presse-pectoraux.jpg" alt="Position presse à pectoraux"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">2</span>Presse à pectoraux (Cybex)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~25 kg</div>
         <div class="cue">Dos collé, pousse sans verrouiller les coudes, contrôle le retour.</div></div></div>
 
-      <div class="ex"><img src="img/tirage-cable.jpg" alt="Tirage / rowing câble">
+      <div class="ex"><div class="imgs"><figure><img src="img/tirage-cable.jpg" alt="Tirage / rowing câble"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-tirage-cable.jpg" alt="Position tirage"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">3</span>Tirage assis / rowing (Cybex)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~35 kg</div>
         <div class="cue">Tire avec le dos, serre les omoplates, ne tire pas qu'avec les bras.</div></div></div>
 
-      <div class="ex"><img src="img/leg-curl.jpg" alt="Leg curl">
+      <div class="ex"><div class="imgs"><figure><img src="img/leg-curl.jpg" alt="Leg curl"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-leg-curl.jpg" alt="Position leg curl"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">4</span>Leg curl (ischios)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~25 kg</div>
         <div class="cue">Mouvement lent, sens les ischios travailler, pas d'à-coups.</div></div></div>
 
-      <div class="ex"><img src="img/developpe-epaules.jpg" alt="Développé épaules">
+      <div class="ex"><div class="imgs"><figure><img src="img/developpe-epaules.jpg" alt="Développé épaules"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-developpe-epaules.jpg" alt="Position développé épaules"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">5</span>Développé épaules (machine)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~20 kg</div>
         <div class="cue">Pousse au-dessus de la tête, sans creuser le bas du dos. Épaule sensible → reste léger, pas de douleur.</div></div></div>
 
-      <div class="ex"><img src="img/poids-libres.jpg" alt="Gainage">
+      <div class="ex"><div class="imgs"><figure><img src="img/poids-libres.jpg" alt="Gainage"><figcaption>Ta salle</figcaption></figure><figure><img src="img/form-gainage.jpg" alt="Position gainage"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">6</span>Gainage planche</h4><div class="sets">3 × 40s</div></div>
         <div class="load">⚡ Poids du corps</div>
         <div class="cue">Corps droit et gainé, fesses serrées, ne creuse pas.</div></div></div>
@@ -155,32 +160,32 @@
     <section class="day" id="j2">
       <div class="day-head"><h2>Jour 2 — Full body (variation)</h2><span>~45 min · même logique, autres angles</span></div>
 
-      <div class="ex"><img src="img/leg-extension.jpg" alt="Leg extension">
+      <div class="ex"><div class="imgs"><figure><img src="img/leg-extension.jpg" alt="Leg extension"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-leg-extension.jpg" alt="Position leg extension"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">1</span>Leg extension (quadriceps)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~30 kg</div>
         <div class="cue">Extension complète, 1s de contraction en haut, descente contrôlée.</div></div></div>
 
-      <div class="ex"><img src="img/pec-deck.jpg" alt="Pec deck">
+      <div class="ex"><div class="imgs"><figure><img src="img/pec-deck.jpg" alt="Pec deck"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-pec-deck.jpg" alt="Position pec deck"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">2</span>Pec deck (pectoraux)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~25 kg</div>
         <div class="cue">Serre les pecs au centre, ouvre lentement sans forcer l'épaule.</div></div></div>
 
-      <div class="ex"><img src="img/tirage-cable.jpg" alt="Tirage câble">
+      <div class="ex"><div class="imgs"><figure><img src="img/tirage-cable.jpg" alt="Tirage câble"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-tirage-cable.jpg" alt="Position tirage"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">3</span>Tirage / rowing (Cybex)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~35 kg</div>
         <div class="cue">Buste droit, coudes le long du corps, omoplates serrées.</div></div></div>
 
-      <div class="ex"><img src="img/leg-curl.jpg" alt="Leg curl">
+      <div class="ex"><div class="imgs"><figure><img src="img/leg-curl.jpg" alt="Leg curl"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-leg-curl.jpg" alt="Position leg curl"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">4</span>Leg curl (ischios)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~25 kg</div>
         <div class="cue">Contrôle la phase de retour, c'est là que ça construit.</div></div></div>
 
-      <div class="ex"><img src="img/triceps.jpg" alt="Triceps">
+      <div class="ex"><div class="imgs"><figure><img src="img/triceps.jpg" alt="Triceps"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-triceps.jpg" alt="Position triceps"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">5</span>Triceps (machine / poulie)</h4><div class="sets">3 × 12</div></div>
         <div class="load">⚡ Départ ~20 kg</div>
         <div class="cue">Coudes fixes, extension complète, ne balance pas le corps.</div></div></div>
 
-      <div class="ex"><img src="img/adducteurs.jpg" alt="Adducteurs">
+      <div class="ex"><div class="imgs"><figure><img src="img/adducteurs.jpg" alt="Adducteurs"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-adducteurs.jpg" alt="Position adducteurs"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">6</span>Adducteurs + Gainage</h4><div class="sets">3 × 15</div></div>
         <div class="load">⚡ Départ ~35 kg</div>
         <div class="cue">Serre lentement, contrôle l'ouverture. Finis par 3×40s de planche.</div></div></div>
@@ -191,32 +196,32 @@
       <div class="day-head"><h2>Jour bonus — Cardio + pump léger</h2><span>Optionnel · le week-end si tu as le jus · ~40 min · tout en légèreté</span></div>
       <div class="note">Pas obligatoire. Il accélère les résultats (cœur, récup, dépense) et travaille le VO2/l'endurance que J1 et J2 ne touchent pas. Si tu n'as tenu que Jour 1 + Jour 2, c'est déjà gagné. Ici tout est LÉGER : RPE 6, on cherche la circulation et le plaisir, pas la perf.</div>
 
-      <div class="ex"><img src="img/cardio.jpg" alt="Cardio Zone 2">
+      <div class="ex"><div class="imgs"><figure><img src="img/cardio.jpg" alt="Cardio"><figcaption>Ta salle</figcaption></figure><figure><img src="img/form-cardio.jpg" alt="Position vélo"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">1</span>Cardio Zone 2</h4><div class="sets">20-30 min</div></div>
         <div class="load">⚡ Allure conversation</div>
         <div class="cue">Tapis en marche inclinée ou vélo. Allure où tu peux encore tenir une phrase complète sans t'essouffler. Ni sprint, ni promenade. C'est le socle longévité (cœur).</div></div></div>
 
-      <div class="ex"><img src="img/presse-cuisses.jpg" alt="Presse à cuisses légère">
+      <div class="ex"><div class="imgs"><figure><img src="img/presse-cuisses.jpg" alt="Presse à cuisses"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-presse-cuisses.jpg" alt="Position presse à cuisses"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">2</span>Presse à cuisses (léger)</h4><div class="sets">2 × 15</div></div>
         <div class="load">⚡ Départ ~40 kg</div>
         <div class="cue">Plus léger que J1, plus de reps. On cherche le flux sanguin, pas la charge.</div></div></div>
 
-      <div class="ex"><img src="img/pec-deck.jpg" alt="Pec deck léger">
+      <div class="ex"><div class="imgs"><figure><img src="img/pec-deck.jpg" alt="Pec deck"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-pec-deck.jpg" alt="Position pec deck"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">3</span>Pec deck (léger)</h4><div class="sets">2 × 15</div></div>
         <div class="load">⚡ Départ ~20 kg</div>
         <div class="cue">Serre les pecs au centre, amplitude complète, aucune douleur d'épaule.</div></div></div>
 
-      <div class="ex"><img src="img/tirage-cable.jpg" alt="Tirage léger">
+      <div class="ex"><div class="imgs"><figure><img src="img/tirage-cable.jpg" alt="Tirage"><figcaption>Ta machine</figcaption></figure><figure><img src="img/form-tirage-cable.jpg" alt="Position tirage"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">4</span>Tirage / rowing (léger)</h4><div class="sets">2 × 15</div></div>
         <div class="load">⚡ Départ ~30 kg</div>
         <div class="cue">Équilibre le pec deck, garde le buste droit, omoplates serrées.</div></div></div>
 
-      <div class="ex"><img src="img/poids-libres.jpg" alt="Biceps curl haltères">
+      <div class="ex"><div class="imgs"><figure><img src="img/poids-libres.jpg" alt="Haltères"><figcaption>Ta salle</figcaption></figure><figure><img src="img/form-biceps.jpg" alt="Position biceps curl"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">5</span>Biceps curl (haltères)</h4><div class="sets">2 × 12</div></div>
         <div class="load">⚡ Départ ~8 kg / main</div>
         <div class="cue">Les bras qu'on ne cible pas en J1/J2. Coudes fixes, pas de balancier. Pur plaisir.</div></div></div>
 
-      <div class="ex"><img src="img/poids-libres.jpg" alt="Gainage">
+      <div class="ex"><div class="imgs"><figure><img src="img/poids-libres.jpg" alt="Gainage"><figcaption>Ta salle</figcaption></figure><figure><img src="img/form-gainage.jpg" alt="Position gainage"><figcaption class="pos">Position</figcaption></figure></div>
         <div class="body"><div class="top"><h4><span class="num">6</span>Gainage</h4><div class="sets">3 × 45s</div></div>
         <div class="load">⚡ Poids du corps</div>
         <div class="cue">Planche + planche latérale si tu veux monter d'un cran.</div></div></div>
